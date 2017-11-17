@@ -198,17 +198,17 @@
     /**==============================
     Auto width Vertical menu
     ===============================**/
-    function kt_auto_width_vertical_menu(){
-        var full_width = parseInt($('.container').innerWidth());
-
-        //full_width = $( document ).width();
-        var menu_width = parseInt($('.verticalmenu-content').actual('width'));
-        var w = (full_width - menu_width)-32;
-        $('.verticalmenu-content').find('.megamenu').each(function(){
-
-            $(this).css('max-width',w+'px');
-        });
-    }
+    // function kt_auto_width_vertical_menu(){
+    //     var full_width = parseInt($('.container').innerWidth());
+    //
+    //     //full_width = $( document ).width();
+    //     var menu_width = parseInt($('.verticalmenu-content').actual('width'));
+    //     var w = (full_width - menu_width)-32;
+    //     $('.verticalmenu-content').find('.megamenu').each(function(){
+    //
+    //         $(this).css('max-width',w+'px');
+    //     });
+    // }
 
     /* ---------------------------------------------
      Height Full
@@ -432,19 +432,19 @@
     /* ---------------------------------------------
      Init popup
      --------------------------------------------- */
-    function init_popup(){
-        if($(window).width() + kt_get_scrollbar_width() >= 768){
-            if($('body').hasClass('home')){
-                //Open directly via API
-                $.magnificPopup.open({
-                  items: {
-                    src: '<div class="white-popup"><div class="kt-popup-newsletter"><div class="popup-title"><h3>中数智汇商标交易平台</h3><p class="notice">请输入您的电子邮件，第一次购买可获得<span class="text-primary">25%的折扣</span></p></div><form class="form-subscribe"><input class="input" placeholder="输入您的邮箱" type="text" /><button class="button">不 谢谢！</button><button class="button primary">进入</button></form><div class="checkbox"><label><input type="checkbox" value="">不再弹出此窗口！</label></div></div></div>',  //can be a HTML string, jQuery object, or CSS selector
-                    type: 'inline'
-                  }
-                });
-            }
-        }
-    }
+    // function init_popup(){
+    //     if($(window).width() + kt_get_scrollbar_width() >= 768){
+    //         if($('body').hasClass('home')){
+    //             //Open directly via API
+    //             $.magnificPopup.open({
+    //               items: {
+    //                 src: '<div class="white-popup"><div class="kt-popup-newsletter"><div class="popup-title"><h3>中数智汇商标交易平台</h3><p class="notice">请输入您的电子邮件，第一次购买可获得<span class="text-primary">25%的折扣</span></p></div><form class="form-subscribe"><input class="input" placeholder="输入您的邮箱" type="text" /><button class="button">不 谢谢！</button><button class="button primary">进入</button></form><div class="checkbox"><label><input type="checkbox" value="">不再弹出此窗口！</label></div></div></div>',  //can be a HTML string, jQuery object, or CSS selector
+    //                 type: 'inline'
+    //               }
+    //             });
+    //         }
+    //     }
+    // }
     function fireOnResizeEvent() {
         var width, height;
         if (navigator.appName.indexOf("Microsoft") != -1) {
@@ -471,10 +471,10 @@
       kt_parallax();
       kt_carousel_mobile();
       kt_hiden_orther_veticalmenu();
-      kt_auto_width_vertical_menu();
+      // kt_auto_width_vertical_menu();
       clone_header_ontop();
       kt_stick_menu();
-      init_popup();
+      // init_popup();
     });
     /* ---------------------------------------------
      Scripts resize
@@ -485,7 +485,7 @@
       kt_height_full();
       kt_width_full();
       kt_carousel_mobile();
-      kt_auto_width_vertical_menu();
+      // kt_auto_width_vertical_menu();
       kt_stick_menu();
     });
     /* ---------------------------------------------
@@ -610,16 +610,16 @@
             return false;
         });
 
-        var wow = new WOW(
-          {
-            boxClass:     'wow',      // default
-            animateClass: 'animated', // default
-            offset:       0,          // default
-            mobile:       false,       // default
-            live:         true        // default
-          }
-        )
-        wow.init();
+        // var wow = new WOW(
+        //   {
+        //     boxClass:     'wow',      // default
+        //     animateClass: 'animated', // default
+        //     offset:       0,          // default
+        //     mobile:       false,       // default
+        //     live:         true        // default
+        //   }
+        // )
+        // wow.init();
 
         // Slide home 1
         if( $('.slide-home1 .slide-container').length > 0 ){
@@ -639,9 +639,9 @@
             $('#box-mobile-menu').removeClass('open');
         });
         //  Box mobile menu
-        if($('#box-mobile-menu').length >0 ){
-            $("#box-mobile-menu").mCustomScrollbar();
-        }
+        // if($('#box-mobile-menu').length >0 ){
+        //     $("#box-mobile-menu").mCustomScrollbar();
+        // }
 
         $(document).on('click','.topbar-bar',function(){
             $(this).closest('.header').find('.top-bar').toggleClass('open');
@@ -655,20 +655,20 @@
 
         // Quickview
 
-        $(document).on('click','.button.quick-view',function(){
-           var data = {}
-            $.post('quick_view.html', data, function(response){
-                $.magnificPopup.open({
-                  items: {
-                    src: '<div class="kt-quickview-popup">'+response+'</div>',  //can be a HTML string, jQuery object, or CSS selector
-                    type: 'inline'
-                  }
-                });
-               $(window).trigger('resize');
-
-            })
-            return false;
-        })
+        // $(document).on('click','.button.quick-view',function(){
+        //    var data = {}
+        //     $.post('quick_view.html', data, function(response){
+        //         $.magnificPopup.open({
+        //           items: {
+        //             src: '<div class="kt-quickview-popup">'+response+'</div>',  //can be a HTML string, jQuery object, or CSS selector
+        //             type: 'inline'
+        //           }
+        //         });
+        //        $(window).trigger('resize');
+        //
+        //     })
+        //     return false;
+        // })
 
         // Instantiate EasyZoom instances
         if( $('.kt-easyzoom').length > 0 ){
